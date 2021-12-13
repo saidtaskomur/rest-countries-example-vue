@@ -8,7 +8,15 @@
         <div class="ma-5">
             <SearchAndFilter @countryName="getCountryName" @selectedRegionCode="getSelectedRegionCode"/>
             <v-row class="text-center" v-if="!getLoadingCountryies">
-                <v-col cols="3" class="pa-0 ma-0" v-for="country in countryList" :key="country.name">
+                <v-col
+                    xl="3"
+                    lg="3"
+                    md="4"
+                    sm="6"
+                    xs="12"
+                    class="pa-0 ma-0"
+                    v-for="country in countryList"
+                    :key="country.name">
                     <CountryCard :country-data="country" />
                 </v-col>
             </v-row>
