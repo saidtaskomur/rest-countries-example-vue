@@ -52,7 +52,7 @@
                             xs="12"
                         >
                             <div class="py-2"><strong>Native Namme: </strong> <span>{{ countryDetailData.nativeName }}</span></div>
-                            <div class="py-2"><strong>Population: </strong> <span> {{ countryDetailData.population }}</span></div>
+                            <div class="py-2"><strong>Population: </strong> <span> {{ formatPopulation }}</span></div>
                             <div class="py-2"><strong>Region: </strong> <span>{{ countryDetailData.region }}</span></div>
                             <div class="py-2"><strong>Sub Region: </strong> <span>{{ countryDetailData.subregion }}</span></div>
                             <div class="py-2"><strong>Capital: </strong> <span>{{ countryDetailData.capital }}</span></div>
@@ -102,6 +102,9 @@ export default {
                 return item.name;
             })
             return names.toString();
+        },
+        formatPopulation() {
+            return (Math.floor(this.countryDetailData.population / 1)).toLocaleString()
         }
     },
     mounted() {

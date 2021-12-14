@@ -20,7 +20,7 @@
                 class="mx-0"
             >
                 <v-col cols="12" class="text-start py-1 my-0">
-                    <strong>Popülation</strong>: <span>{{ countryData.population }}</span>
+                    <strong>Popülation</strong>: <span>{{ formatPopulation }}</span>
                 </v-col>
                 <v-col cols="12" class="text-start py-1 my-0">
                     <strong>Region</strong>: <span>{{ countryData.region }}</span>
@@ -41,6 +41,11 @@ export default {
             type: Object,
             required: true,
         },
+    },
+    computed: {
+        formatPopulation() {
+            return (Math.floor(this.countryData.population / 1)).toLocaleString()
+        }
     },
     methods: {
         goCountryDetail() {
